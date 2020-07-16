@@ -33,15 +33,15 @@ void NCursesDisplay::DisplaySystem(System& system, WINDOW* window) {
   mvwprintw(window, ++row, 2, ("OS: " + system.OperatingSystem()).c_str());
   mvwprintw(window, ++row, 2, ("Kernel: " + system.Kernel()).c_str());
   mvwprintw(window, ++row, 2, "CPU: ");
-  wattron(window, COLOR_PAIR(1));
+  wattron(window, COLOR_PAIR(2));
   mvwprintw(window, row, 10, "");
   wprintw(window, ProgressBar(system.Cpu().Utilization()).c_str());
-  wattroff(window, COLOR_PAIR(1));
+  wattroff(window, COLOR_PAIR(2));
   mvwprintw(window, ++row, 2, "Memory: ");
-  wattron(window, COLOR_PAIR(1));
+  wattron(window, COLOR_PAIR(2));
   mvwprintw(window, row, 10, "");
   wprintw(window, ProgressBar(system.MemoryUtilization()).c_str());
-  wattroff(window, COLOR_PAIR(1));
+  wattroff(window, COLOR_PAIR(2));
   mvwprintw(window, ++row, 2,
             ("Total Processes: " + to_string(system.TotalProcesses())).c_str());
   mvwprintw(
