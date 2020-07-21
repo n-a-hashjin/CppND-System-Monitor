@@ -12,8 +12,8 @@ class Processor {
   float Utilization();
   
  private:
-  float PrevIdle_ = 0;
   float PrevTotal_ = 0;
+  float PrevActive_ = 0;
 };
 
 #endif
